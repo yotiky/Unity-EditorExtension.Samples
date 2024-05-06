@@ -568,6 +568,10 @@ public class SamplesWindow : EditorWindow
             GUILayout.Label("HelpBox3");
             GUILayout.Button("HelpBox4");
         }
+        
+        // RadioButton
+        toolbarSelected = GUILayout.Toolbar(toolbarSelected, new[] { "Toolbar1", "Toolbar2", "Toolbar3" }, EditorStyles.radioButton);
+        selGridSelected = GUILayout.SelectionGrid(selGridSelected, new[] { "SelectionGrid1", "SelectionGrid2", "SelectionGrid3" }, 2, EditorStyles.radioButton);
     }
     private void Utility()
     {

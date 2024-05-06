@@ -762,5 +762,4 @@ public class SamplesWindow : EditorWindow
 
         Debug.Log("GUIStyles:\r\n" + sb.ToString());
     }
-
 }

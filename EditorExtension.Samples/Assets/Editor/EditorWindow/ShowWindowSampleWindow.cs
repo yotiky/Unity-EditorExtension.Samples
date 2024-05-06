@@ -16,7 +16,7 @@ public class ShowWindowSamplesWindow : EditorWindow
         // GetWindowする場合は内部で呼ばれるのでShowを呼び出さなくても良い
         //GetWindow<ShowWindowSamplesWindow>("Show");
     }
-    [MenuItem("Sample/ShowWindow/1.ShowWithParams")]
+    [MenuItem("Sample/ShowWindow/1-1.ShowWithParams")]
     static void CallShowWithParams()
     {
         var window = CreateInstance<ShowWindowSamplesWindow>();
@@ -25,6 +25,24 @@ public class ShowWindowSamplesWindow : EditorWindow
         window.maxSize = new Vector2(1280, 960);
         // positionだけはShowの後じゃないと反映されない
         window.position = new Rect(20, 20, 400, 300);
+
+        // original icon
+        var icon = (Texture)EditorGUIUtility.Load("Icons/icon_x.png");
+        window.titleContent = new GUIContent("X(Twitter)", icon);
+    }
+    [MenuItem("Sample/ShowWindow/1-2.ShowWithBuiltinIcon")]
+    static void CallShowWithBuiltinIcon()
+    {
+        var window = CreateInstance<ShowWindowSamplesWindow>();
+        window.Show();
+        
+        // builtin icon
+        var builtinIcon = EditorGUIUtility.IconContent("BuildSettings.Xbox360");
+        builtinIcon.text = "Xbox";
+        window.titleContent = builtinIcon;
+        
+        // Textureとして扱いたい場合はLoadで読める
+        var icon = (Texture)EditorGUIUtility.Load("BuildSettings.Xbox360");
     }
     [MenuItem("Sample/ShowWindow/2.ShowModal")]
     static void CallShowModal()

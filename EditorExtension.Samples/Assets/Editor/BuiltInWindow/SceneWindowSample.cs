@@ -20,8 +20,13 @@ public class SceneWindowSample
 
     private static void SceneViewOnduringSceneGui(SceneView view)
     {
-        // 3D GUIの描画はそのまま処理
         var obj = Selection.activeGameObject;
+        if (obj == null)
+        {
+            return;
+        }
+
+        // 3D GUIの描画はそのまま処理
         Handles.Label(obj.transform.position + Vector3.up * 3, obj.name);
 
         // 2D GUIの描画を拡張する場合は、BeginGUI/EndGUIで宣言する

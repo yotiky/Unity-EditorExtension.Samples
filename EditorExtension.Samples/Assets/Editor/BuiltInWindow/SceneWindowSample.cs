@@ -3,19 +3,13 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-[InitializeOnLoad]
 public class SceneWindowSample 
 {
-    static SceneWindowSample()
-    {
-        SceneView.duringSceneGui += SceneViewOnduringSceneGui;
-    }
-    
     [InitializeOnLoadMethod]
     private static void Initalize()
     {
         // InitializeOnLoad + static コンストラクタ、もしくは InitializeOnLoadMethod で初期化する
-        //SceneView.duringSceneGui += SceneViewOnduringSceneGui;
+        SceneView.duringSceneGui += SceneViewOnduringSceneGui;
     }
 
     private static void SceneViewOnduringSceneGui(SceneView view)

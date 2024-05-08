@@ -6,4 +6,5 @@ using UnityEngine;
 public partial class InspectorSampleComponent2 : MonoBehaviour
 {
     [SerializeField] private string message;
+    [SerializeField] private GameObject prefab;
 }

@@ -3,15 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Fruit
+{
+    Apple,
+    Orange,
+    GoldenPeach,
+}
 public class SerializedObjectSampleComponent : MonoBehaviour
 {
-    public enum Fruit
-    {
-        Apple,
-        Orange,
-        GoldenPeach,
-    }
-
     [Serializable]
     public class SubClass
     {

@@ -122,6 +122,9 @@ public class SamplesWindow : EditorWindow
     private float mmSliderMaxLimit = 20;
     private float mmSliderMinValue = -10;
     private float mmSliderMaxValue = 10;
+    private int popupIndex;
+    private int popupIntValue;
+    private Fruit popupEnumValue;
     private bool foldout = false;
     private Vector2 scrollPosScope = Vector2.zero;
 
@@ -219,6 +222,11 @@ public class SamplesWindow : EditorWindow
         // MinMaxSlider
         EditorGUILayout.MinMaxSlider("MinMaxSlider", ref mmSliderMinValue, ref mmSliderMaxValue, mmSliderMinLimit, mmSliderMaxLimit);
         
+        // Popup
+        popupIndex = EditorGUILayout.Popup("Index", popupIndex, new[] { "りんご", "みかん", "パイナップル" });
+        popupIntValue = EditorGUILayout.IntPopup("Int", popupIntValue, new[] { "十", "二十", "三十" }, new[] { 10, 20, 30 });
+        popupEnumValue = (Fruit)EditorGUILayout.EnumPopup("Enum", popupEnumValue);
+        
         // DisabledScope
         using (new EditorGUI.DisabledScope(true))
         {
@@ -232,7 +240,7 @@ public class SamplesWindow : EditorWindow
         EditorGUILayout.HelpBox("HelpBox Error", MessageType.Error);
         EditorGUILayout.Toggle("Toggle", true);
         EditorGUILayout.HelpBox("HelpBox Error", MessageType.Error, false);
-        
+
         // BoundsField
         // BoundsIntField
         // ColorField
@@ -250,13 +258,11 @@ public class SamplesWindow : EditorWindow
         // Vector3Field
         // Vector3IntField
         // Vector4Field
-        
+
         // DropdownButton
-        // Popup
-        // IntPopup
-        // EnumPopup
         // InspectorTitlebar
     }
+    
     private void Layout()
     {
         // Space

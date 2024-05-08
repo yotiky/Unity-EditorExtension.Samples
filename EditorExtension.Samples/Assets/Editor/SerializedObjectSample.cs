@@ -34,6 +34,17 @@ public class SerializedObjectSample : Editor
         EditorGUILayout.LabelField("==ここから Custom==");
         serializedObject.Update();
 
+        if (GUILayout.Button("All Reset"))
+        {
+            serializedObject.FindProperty("boolValue").boolValue = false;
+            serializedObject.FindProperty("intValue").intValue = 0;
+            serializedObject.FindProperty("floatValue").floatValue = 0;
+            serializedObject.FindProperty("stringValue").stringValue = "";
+            serializedObject.FindProperty("list").ClearArray();
+            serializedObject.FindProperty("enumValue").enumValueIndex = 0;
+            serializedObject.FindProperty("subClassReference").FindPropertyRelative("doubleValue").doubleValue = 0;
+        }
+        
         EditorGUILayout.LabelField("Layout");
         // デフォルトの入力欄
         EditorGUILayout.LabelField("PropertyField");

@@ -167,7 +167,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f34e942b87b8d4097e2882ce8c5703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  referenceObject: {fileID: 1644747540}
+  boolValue: 0
+  intValue: 0
+  floatValue: 0
+  stringValue: 
+  objectReferenceValue: {fileID: 110283334}
+  list: 
+  enumValue: 0
+  subClassReference:
+    doubleValue: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

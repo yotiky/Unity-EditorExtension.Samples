@@ -137,6 +137,9 @@ public class SerializedObjectSample : Editor
         
         if (GUILayout.Button("Sub class reference"))
         {
+            // これでもOK
+            //var relativeProperty = serializedObject.FindProperty("subClassReference.doubleValue");
+            
             var objRefProperty = serializedObject.FindProperty("subClassReference");
             var relativeProperty = objRefProperty.FindPropertyRelative("doubleValue");
             relativeProperty.doubleValue++;
